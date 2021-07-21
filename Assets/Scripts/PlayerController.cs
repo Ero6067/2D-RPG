@@ -6,12 +6,20 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float moveSpeed = 5f;
     private float inputX;
     private float inputY;
 
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;
+
+    [Header("Health Settings")]
+    public int health = 0;
+
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+
+        if (rb == null) { Debug.Log("NO RIGIDBODY2D FOUND ON PLAYER."); }
     }
 
     private void Start()
