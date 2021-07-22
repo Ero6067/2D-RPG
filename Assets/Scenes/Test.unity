@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 978971678}
+  anim: {fileID: 978971682}
   moveSpeed: 5
   health: 0
 --- !u!114 &978971681
