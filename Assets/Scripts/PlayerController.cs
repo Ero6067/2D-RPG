@@ -31,9 +31,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         rb.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
-        anim.SetFloat("moveX", rb.velocity.x);
-        anim.SetFloat("moveY", rb.velocity.y);
-        if (rb.velocity.x != 0 || rb.velocity.y != 0) anim.SetFloat("moving", 1f);
+        anim.SetFloat("moveX", inputX);
+        anim.SetFloat("moveY", inputY);
+        if (rb.velocity.x != 0 || rb.velocity.y != 0)
+        {
+            anim.SetFloat("moving", 1f);
+            anim.SetFloat("lastMoveX", inputX);
+            anim.SetFloat("lastMoveY", inputY);
+        }
         else anim.SetFloat("moving", 0f);
     }
 
