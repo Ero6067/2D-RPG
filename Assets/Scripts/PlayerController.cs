@@ -5,13 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Animator anim;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator anim;
     private float inputX;
     private float inputY;
+    public static PlayerController instance;
+    [SerializeField] private string areaTransitionName;
 
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
 
     [Header("Player Resource Settings")]
     public int health = 0;
@@ -26,6 +28,15 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         DontDestroyOnLoad(gameObject);
     }
 
