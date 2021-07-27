@@ -13,12 +13,22 @@ public partial class SceneExit : MonoBehaviour
     private Levels exitName;
 
     [SerializeField]
+    public SceneStart theEntrance;
+
+    private void Start()
+    {
+        //theEntrance.lastE
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (SceneManager.GetActiveScene().name != sceneToLoad)
         {
-            PlayerPrefs.SetString("LastExitName", exitName.ToString());
-            SceneManager.LoadScene(sceneToLoad);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                PlayerPrefs.SetString("LastExitName", exitName.ToString());
+                SceneManager.LoadScene(sceneToLoad);
+            }
         }
     }
 }

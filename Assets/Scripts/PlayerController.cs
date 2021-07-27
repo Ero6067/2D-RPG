@@ -5,12 +5,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Animator anim;
+    [SerializeField]
+    private Rigidbody2D rb;
+
+    [SerializeField]
+    private Animator anim;
+
     private float inputX;
     private float inputY;
     public static PlayerController instance;
-    [SerializeField] private string areaTransitionName;
+
+    public string areaTransitionName;
 
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;

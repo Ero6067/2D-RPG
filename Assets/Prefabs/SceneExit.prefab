@@ -72,3 +72,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Test2
   exitName: 0
+  theEntrance: {fileID: 0}
