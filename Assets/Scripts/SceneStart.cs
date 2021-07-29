@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneStart : MonoBehaviour
 {
     [SerializeField]
-    private Levels lastExitName;
+    public Levels lastExitName;
 
     private void Start()
     {

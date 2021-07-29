@@ -13,11 +13,11 @@ public partial class SceneExit : MonoBehaviour
     private Levels exitName;
 
     [SerializeField]
-    public SceneStart theEntrance;
+    //public SceneStart theEntrance;
 
     private void Start()
     {
-        //theEntrance.lastE
+        //theEntrance.lastExitName = exitName;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
